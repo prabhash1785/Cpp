@@ -20,7 +20,8 @@ int findNum(int n, int array[], int size) {
 
 int main() {
 	const int ARRAY_SIZE = 11;
-	int list[ARRAY_SIZE] = {6, 8, 9, 12, 85, 2, 90, 11, 67, 22, 56};
+	//int list[ARRAY_SIZE] = {6, 8, 9, 12, 85, 2, 90, 11, 67, 22, 56};
+	int list[] = {6, 8, 9, 12, 85, 2, 90, 11, 67, 22, 56};
 	int numToBeFound = 11;
 
 	int pos = findNum(numToBeFound, list, ARRAY_SIZE);
