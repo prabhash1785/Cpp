@@ -9,6 +9,7 @@ int main() {
 
   cout << "value of a: " << *mypointer;
   cout << "\naddress of a: " << mypointer << "\n";
+  cout << "Increment the value of a using pointer: " << (*mypointer + 1) << "\n";
 
   return 0;
 
