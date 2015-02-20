@@ -8,6 +8,7 @@ class Person {
     string lastName;
 
   public:
+    Person();
     Person(string fName, string lName) {
       firstName = fName;
       lastName = lName;
@@ -18,6 +19,12 @@ class Person {
     }
 
 };
+
+//showing two different ways to access object members in C++
+Person::Person() {
+  this->firstName = "No";
+  this->lastName = "Name";
+}
 
 int main() {
   
