@@ -22,15 +22,18 @@ class Person {
 
 //showing two different ways to access object members in C++
 Person::Person() {
-  //this->firstName = "No";
-  //this->lastName = "Name";
-  Person("Mango", "Apple"); //call overloaded constructor
+  this->firstName = "No";
+  this->lastName = "Name";
+  //Person("Mango", "Apple"); //call overloaded constructor
 }
 
 int main() {
   
-  Person person("Foo", "Bar");
-  person.printFullName();
+  Person person1("Foo", "Bar");
+  Person person2;
+  
+  person1.printFullName();
+  person2.printFullName();
 
   return 0;
 
