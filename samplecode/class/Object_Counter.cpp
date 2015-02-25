@@ -15,9 +15,9 @@ int Dummy::counter = 0;
 
 int main() {
   
-  Dummy a; //it creates an object reference
+  Dummy a; //Object is created locally on stack and automatically cleaned when local scope is done
   Dummy b[5];
-  Dummy *c = new Dummy; //when object is created using new, it creates a pointer to an object
+  Dummy *c = new Dummy; //this object is created on heap and needs to be manually deleted
 
   cout << "1) Object count: " << Dummy::counter << " " << c->counter << "\n";
   
