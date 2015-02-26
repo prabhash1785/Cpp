@@ -9,12 +9,17 @@ class Sample {
   public:
    int a;
    Sample(int val) : a(val) { };
-   void setValue(int);
+   int getValue() const;
+   void setValue(int); //this function can only be called from non-const object
     
 };
 
-void Sample::setValue(int val) {
-  a = val;
+int Sample::getValue() const {
+  return a;
+}
+
+void Sample::setValue(int b) {
+  a = b;
 }
 
 int main() {
@@ -22,16 +27,18 @@ int main() {
   Sample sample(10);
   sample.a = 20; //lets change the value of a, this should be allowed because it's on a non-const object 
   cout << "Value of a for non-const object: " << sample.a << "\n";
+  
+  sample.setValue(30);
+  cout << "Updated value of a in non-const object: " << sample.getValue() << "\n";
 
+
+  //For Const object, you can only have const functions and functions can't be used to modify data member values
   const Sample sample2(6);
   
   //below statement fails compilation error as sample2 is const object and it's members are read only
   //sample2.a = 12; //lets change the value of a, this will fail because sample2 is const object and doesn't allow write to it's members
-  
-  //since sample2 is const object, let's try to update member value by call setValue function
-  sample2.setValue(19);
-
-  cout << "Value of a for const object: " << sample2.a << "\n";
+ 
+  cout << "Value of a for const object: " << sample2.getValue() << "\n";
   
   return 0;
 
