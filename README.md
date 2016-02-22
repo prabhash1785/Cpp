@@ -1,2 +1,4 @@
 # Cpp
-Repository for Cpp programs
+Repository for Cpp programs<br>
+
+Compiler used on Max OS X: g++
