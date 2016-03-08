@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <limits>
 
 using namespace std;
 
@@ -21,5 +22,12 @@ int main() {
     
     // sizeof() different C++ data types in bytes
     cout << "Size of int: " << sizeof(int) << "\n";
-    cout << "size of bool = " << sizeof(bool) << "\n";
+    cout << "size of bool = " << sizeof(bool) << endl;
+    
+    // different types of char
+    cout << "char " << sizeof(char) << endl;
+    cout << "char_16t " << sizeof(char16_t) << endl;
+    cout << "char_32t " << sizeof(char32_t) << endl;
+    cout << "wchar_t " << sizeof(wchar_t) << endl;
+    cout << "char is signed == " << std::numeric_limits<char>::is_signed << '\n';
 }
