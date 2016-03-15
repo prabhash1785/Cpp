@@ -29,5 +29,14 @@ int main() {
     cout << "char_16t " << sizeof(char16_t) << endl;
     cout << "char_32t " << sizeof(char32_t) << endl;
     cout << "wchar_t " << sizeof(wchar_t) << endl;
-    cout << "char is signed == " << std::numeric_limits<char>::is_signed << '\n';
+    cout << "char is signed == " << numeric_limits<char>::is_signed << '\n';
+    
+    // string
+    string s = "hello";
+    cout << "size of s: " << sizeof(s) << endl; // Prints 24
+    
+    // char * ch = "hello"; // Results in warning as conversion from string literal to char * is deprecated
+    cout << "size of hello " << sizeof("hello") << endl; // Prints 6 here, 6th character is null character
+    
+    cout << "Does this ring a bell \a " << endl; // this emits a sound
 }
