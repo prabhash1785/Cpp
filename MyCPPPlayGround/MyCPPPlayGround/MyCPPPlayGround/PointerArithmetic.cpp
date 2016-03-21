@@ -13,10 +13,10 @@ void pointerPlayGround() {
     int a = 3;
     std::cout << "Value of a is = " << a << "\n";
     
-    int* b = &a;
+    int *b = &a;
     std::cout << "Value of a through pointer dereferencing is " << *b << "\n";
     
-    char* c = nullptr; // Pointing to null pointer
+    char *c = nullptr; // Pointing to null pointer
     
     if(c == nullptr) {
         std::cout << "This is Null Pointer";
@@ -25,7 +25,7 @@ void pointerPlayGround() {
     }
 }
 
-void printArrayElements(int* array, int length) {
+void printArrayElements(int *array, int length) {
     
     if(array == nullptr || length <= 0) {
         std::cout<< "Array points to a Null Pointer";
@@ -44,7 +44,7 @@ int main() {
     //pointerPlayGround();
     
     int a[] = {2, 5, 7, 9, 10};
-    int* b = a;
+    int *b = a;
     
     int size = 5;
     
