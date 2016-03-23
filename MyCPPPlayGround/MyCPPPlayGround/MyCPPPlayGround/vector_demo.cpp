@@ -12,10 +12,11 @@
 #include <cctype>
 using namespace std;
 
+// Change string to upper case
 void change_to_upper_case(string &input) {
     
     for(auto &a : input) {
-        toupper(a);
+        a = toupper(a);
     }
 }
 
@@ -36,11 +37,11 @@ int main() {
     vector<vector<int>> v2;
     cout << "Size of v2 : " << v2.size() << endl;
     
-    cout << "Enter 5 numbers:" << endl;
+    cout << "Enter 2 numbers:" << endl;
     int count = 0;
     int num;
     
-    while(count != 5 && cin >> num) {
+    while(count != 2 && cin >> num) {
         count++;
         v.push_back(num);
     }
