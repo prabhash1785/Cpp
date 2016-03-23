@@ -66,7 +66,7 @@ void mask_string() {
         c = 'X';
     }
     
-    cout << "Mutated String: " << input << endl;
+    cout << "Masked String: " << input << endl;
 }
 
 int main() {
