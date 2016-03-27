@@ -11,11 +11,19 @@
 using namespace std;
 
 // swap two numbers using pointers
-void swap(int *a, int *b) {
+void swap_using_pointers(int *a, int *b) {
     
     int temp = *a;
     *a = *b;
     *b = temp;
+}
+
+// sway two numbers using reference
+void swap_using_reference(int &p, int &q) {
+    
+    int temp = p;
+    p = q;
+    q = temp;
 }
 
 int main() {
@@ -26,6 +34,9 @@ int main() {
     
     cout << "You entered: m = " << m << " n = " << n << endl;
     
-    swap(&m, &n);
+//    swap_using_pointers(&m, &n);
+//    cout << "Values swapped: m = " << m << " and n = " << n << endl;
+    
+    swap_using_reference(m, n);
     cout << "Values swapped: m = " << m << " and n = " << n << endl;
 }
