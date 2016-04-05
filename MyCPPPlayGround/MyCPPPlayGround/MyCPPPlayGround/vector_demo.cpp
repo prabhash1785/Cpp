@@ -20,6 +20,19 @@ void change_to_upper_case(string &input) {
     }
 }
 
+// Print elements of vector recursively
+void print_vector_elements_recursively(vector<int> &v) {
+    
+    if(v.empty()) {
+        cout << "Finally vector is empty.." << endl;
+        return;
+    }
+    
+    cout << v.back() << " ";
+    v.pop_back();
+    print_vector_elements_recursively(v); // recurse
+}
+
 int main() {
     
     vector<int> v {2, 19, 4};
@@ -67,4 +80,9 @@ int main() {
         change_to_upper_case(n);
         cout << n << endl;
     }
+    
+    // Print elments of vector of int
+    cout << "Printing elements of vector: " << endl;
+    vector<int> vec {20, 40, 10, 50, 90};
+    print_vector_elements_recursively(vec);
 }
