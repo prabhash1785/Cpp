@@ -33,7 +33,10 @@ string say_something() {
 
 // function pointers
 int fnA(int, int);
-
+void sum(int, int);
+void sub(int, int);
+void mul(int, int);
+void divide(int, int);
 
 int main() {
     
@@ -74,6 +77,17 @@ int main() {
         cout << "Sum is: " << sum << endl;
     }
     
+    vector<void (*)(int, int)> vector_of_arithmetic_fns;
+    vector_of_arithmetic_fns.push_back(sum);
+    vector_of_arithmetic_fns.push_back(sub);
+    vector_of_arithmetic_fns.push_back(mul);
+    vector_of_arithmetic_fns.push_back(divide);
+    
+    int first = 20, second = 10;
+    for(auto funcion_members : vector_of_arithmetic_fns) {
+        funcion_members(first, second);
+    }
+    
 }
 
 void echo(const string &s) {
@@ -93,6 +107,22 @@ void default_param_demo(int a, char c) {
 
 int fnA(int a, int b) {
     return a + b;
+}
+
+void sum(int a, int b) {
+    cout << "Sum = " << a+ b << endl;
+}
+
+void sub(int a, int b) {
+    cout << "Sub = " << a - b << endl;
+}
+
+void mul(int a, int b) {
+    cout << "Mul = " << a * b << endl;
+}
+
+void divide(int a, int b) {
+    cout << "Div = " << a / b << endl;
 }
 
 
