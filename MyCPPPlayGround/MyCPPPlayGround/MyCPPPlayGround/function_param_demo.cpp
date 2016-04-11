@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -29,6 +30,10 @@ string say_something() {
     string message = "hey there";
     return message; // this is fine because I am returning a copy of local object
 }
+
+// function pointers
+int fnA(int, int);
+
 
 int main() {
     
@@ -57,6 +62,18 @@ int main() {
     cout << "Which is greater, " << u << " or " << v << ": " << get_greater(u, v) << endl;
     
     cout << "Your message is: " << say_something() << endl;
+    
+    // function pointers
+    // store a function pointer in vector
+    auto fnPointer = fnA;
+    vector<int (*)(int, int)> vector_of_fucntions;
+    vector_of_fucntions.push_back(fnPointer);
+    
+    for(auto func : vector_of_fucntions) {
+        int sum = func(10, 30);
+        cout << "Sum is: " << sum << endl;
+    }
+    
 }
 
 void echo(const string &s) {
@@ -72,6 +89,10 @@ void print(const int ia[10])
 
 void default_param_demo(int a, char c) {
     cout << a << " " << c << endl;
+}
+
+int fnA(int a, int b) {
+    return a + b;
 }
 
 
