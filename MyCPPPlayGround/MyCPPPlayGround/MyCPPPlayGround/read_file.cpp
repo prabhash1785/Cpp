@@ -11,6 +11,7 @@
 #include <string>
 #include <vector>
 #include <iterator>
+#include <sstream>
 
 using namespace std;
 
@@ -54,6 +55,27 @@ void read_file_line_to_vector() {
     
 }
 
+// Tokenize string using getline() function
+void tokenize_string(string s, const char delimiter) {
+    
+    vector<string> vector;
+    istringstream is_stream(s);
+    
+    while(!is_stream.eof()) {
+        string word;
+        getline(is_stream, word, delimiter);
+        vector.push_back(word);
+    }
+    
+    cout << "Here are tokenized words:" << "\n";
+    auto iter = vector.cbegin();
+    while(iter != vector.cend()) {
+        cout << iter -> data() << "\n";
+        iter++;
+    }
+    cout << endl; // flush at the end
+}
+
 int main() {
     
     ifstream file_stream("some_file.txt");
@@ -67,4 +89,7 @@ int main() {
     
     read_file_line_to_vector();
     
+    // tokenize string based on given delimiter
+    string input("CPP is an awesome programming language. It's fun to work with pointers and low level stuff.");
+    tokenize_string(input, ' ');
 }
