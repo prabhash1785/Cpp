@@ -10,6 +10,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <iterator>
 
 using namespace std;
 
@@ -38,9 +39,19 @@ void read_file_line_to_vector() {
         return;
     }
     
+    // itertaion using for loop
     for(string s : v1) {
         cout << s << endl;
     }
+    
+    // iterate using standard iterator
+    cout << "-- Printing vector elments using an iterator --" << endl;
+    auto iter = v1.begin();
+    while(iter != v1.end()) {
+        cout << iter -> data() << endl;
+        iter++;
+    }
+    
 }
 
 int main() {
