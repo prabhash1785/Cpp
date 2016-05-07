@@ -36,6 +36,23 @@ void list_with_queue() {
     print_data(list);
 }
 
+void iterator_range() {
+    
+    list<string> list;
+    list.push_back("Apple");
+    list.push_back("Mango");
+    list.push_back("Orange");
+    list.push_back("Grapes");
+    
+    auto start_iter = list.begin();
+    auto end_iter = list.end();
+    
+    while(start_iter != end_iter) {
+        cout << *start_iter << endl;
+        start_iter++;
+    }
+}
+
 void print_data(const list<deque<int>> list) {
     
     if(list.empty()) {
@@ -56,4 +73,5 @@ void print_data(const list<deque<int>> list) {
 int main() {
     
     list_with_queue();
+    iterator_range();
 }
