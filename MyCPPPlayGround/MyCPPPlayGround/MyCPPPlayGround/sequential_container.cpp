@@ -9,6 +9,8 @@
 #include <iostream>
 #include <list>
 #include <deque>
+#include <string>
+#include <vector>
 
 using namespace std;
 
@@ -38,18 +40,30 @@ void list_with_queue() {
 
 void iterator_range() {
     
-    list<string> list;
-    list.push_back("Apple");
-    list.push_back("Mango");
-    list.push_back("Orange");
-    list.push_back("Grapes");
+    list<string> list1;
+    list1.push_back("Apple");
+    list1.push_back("Mango");
+    list1.push_back("Orange");
+    list1.push_back("Grapes");
     
-    auto start_iter = list.begin();
-    auto end_iter = list.end();
+    // If not modifying container then use const iterator
+    auto start_iter = list1.cbegin(); // iteraor declaration using auto
+    list<string>::const_iterator end_iter = list1.cend(); // explicit iterator declaration
     
     while(start_iter != end_iter) {
         cout << *start_iter << endl;
         start_iter++;
+    }
+    
+    // vector
+    vector<string> cities = {"Chicago", "New York", "San Francisco", "Las Vegas"};
+    auto cities_copy = cities; // copy cities elements to new vector
+    
+    vector<string>::const_reverse_iterator cities_iterator = cities_copy.crbegin(); // use const reverse iterator to access elements from the back
+    while(cities_iterator != cities_copy.crend()) {
+        cout << *cities_iterator << endl; // access element by dereferencing the pointer
+        cout << cities_iterator->data() << endl; // access element using arrow operator
+        cities_iterator += 1; // or simply do an increment operaror
     }
 }
 
