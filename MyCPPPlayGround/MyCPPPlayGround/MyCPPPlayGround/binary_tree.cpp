@@ -1,5 +1,5 @@
 //
-//  BinaryTree.cpp
+//  binary_tree.cpp
 //  MyCPPPlayGround
 //
 //  The height of a binary search tree is the number of edges between the tree's root and its furthest leaf. Find the height of tree.
