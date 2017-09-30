@@ -1,27 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
- * File:   parse_org_structure.cpp
- * Author: Prabhash Rathore
- *
- * Created on September 30, 2017, 12:53 PM
- */
-
-#include <cstdlib>
-
-#include <iostream>
-#include <string>
-#include <vector>
-#include <queue>
-#include <stack>
-
-using namespace std;
-
-/*
+ * 
  * Given an org structure like this, print all sub-org structure for a given sub-org:
 Yahoo
 	Mail
@@ -51,8 +29,22 @@ Yahoo
 		Bing
 			Microsoft
 	Ad
-
+ * 
+ * File:   parse_org_structure.cpp
+ * Author: Prabhash Rathore
+ * Created on September 30, 2017, 12:53 PM
  */
+
+#include <cstdlib>
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <queue>
+#include <stack>
+
+using namespace std;
+
 class Node {
 public:
     Node(string data);
